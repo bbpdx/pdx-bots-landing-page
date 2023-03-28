@@ -13,6 +13,7 @@ const Layout = ({ children }: any) => {
           color: 'white',
           backgroundColor: 'grey',
           opacity: '0.6',
+          fontFamily: 'Bungee Hairline'
         }}>
           <Link href='/'>
               <h1>PDX Bots</h1>
