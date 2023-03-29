@@ -1,9 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '@/styles/Layout.module.css';
 import { Box } from '@mui/system';
+import { Button, ButtonGroup } from '@mui/material';
+import { headerNavigation } from '../../constants/constants'
+import useWindowSize from '@/utils/useWindowSize';
+import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
+
 
 const Layout = ({ children }: any) => {
+  const { width } = useWindowSize();
   return (
     <div>
       <header>
@@ -20,16 +25,26 @@ const Layout = ({ children }: any) => {
           </Link>
           <Box sx={{
               display: 'flex',
-              justifyContent: 'space-evenly',
+              justifyContent: 'flex-end',
               width: '100%',
               alignItems: 'center',
               color:'#16FF00',
               opacity: '1',
+              paddingRight: '2rem'
             }}>
-            <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/contact">Contact Us</Link>
+            <ButtonGroup>
+              {headerNavigation.map((link) => (
+                <Link href={link.href} key={link.label}>
+                  <Button 
+                    variant='text'
+                    sx={{ color:'#16FF00', fontFamily: 'Bungee Hairline', fontWeight:400}}>
+                      {link.label}
+                  </Button>
+                </Link>
+              ))}
+            </ButtonGroup>
           </Box>
+          {/* <HamburgerDropDown/> */}
         </Box>
       </header>
       <main>{children}</main>
