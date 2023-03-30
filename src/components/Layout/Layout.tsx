@@ -18,7 +18,7 @@ const Layout = ({ children }: any) => {
           flexDirection: 'row',
           color: 'white',
           backgroundColor: 'grey',
-          opacity: '0.6',
+          opacity: '.8',
           fontFamily: 'Bungee Hairline'
         }}>
           <Link href='/'>

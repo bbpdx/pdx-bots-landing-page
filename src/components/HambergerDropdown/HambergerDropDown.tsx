@@ -1,4 +1,4 @@
-import { Button, ClickAwayListener, Grow,  Link,  MenuItem, MenuList, Paper, Popper } from '@mui/material'
+import { Button, ClickAwayListener, colors, Grow,  Link,  MenuItem, MenuList, Paper, Popper } from '@mui/material'
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -75,11 +75,18 @@ const HamburgerDropDown = (props: any) => {
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
+                    sx={{
+                      backgroundColor: 'black',
+                    }}
                   >
                     { headerNavigation.map((item: any) => {
                       return (
                         <Link  href={item.href} key={item.label}  >
-                          <MenuItem onClick={handleClose} >
+                          <MenuItem onClick={handleClose} 
+                          sx={{
+                            fontFamily: 'Bungee Hairline',
+                            color:'#16FF00',
+                          }}>
                             {item.label}
                           </MenuItem>
                         </Link>
