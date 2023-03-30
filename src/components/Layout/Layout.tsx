@@ -5,6 +5,7 @@ import { Button, ButtonGroup } from '@mui/material';
 import { headerNavigation } from '../../constants/constants'
 import useWindowSize from '@/utils/useWindowSize';
 import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
+import RenderIf from '../RenderIf/RenderIf';
 
 
 const Layout = ({ children }: any) => {
@@ -32,19 +33,23 @@ const Layout = ({ children }: any) => {
               opacity: '1',
               paddingRight: '2rem'
             }}>
-            <ButtonGroup>
-              {headerNavigation.map((link) => (
-                <Link href={link.href} key={link.label}>
-                  <Button 
-                    variant='text'
-                    sx={{ color:'#16FF00', fontFamily: 'Bungee Hairline', fontWeight:400}}>
-                      {link.label}
-                  </Button>
-                </Link>
-              ))}
-            </ButtonGroup>
+            <RenderIf isTrue={width && width > 600}>
+              <ButtonGroup>
+                {headerNavigation.map((link) => (
+                  <Link href={link.href} key={link.label}>
+                    <Button 
+                      variant='text'
+                      sx={{ color:'#16FF00', fontFamily: 'Bungee Hairline', fontWeight:400}}>
+                        {link.label}
+                    </Button>
+                  </Link>
+                ))}
+              </ButtonGroup>
+            </RenderIf>
+            <RenderIf isTrue={width && width <= 600}>
+              <HamburgerDropDown headerNavigation={headerNavigation}/>
+            </RenderIf>           
           </Box>
-          {/* <HamburgerDropDown/> */}
         </Box>
       </header>
       <main>{children}</main>
