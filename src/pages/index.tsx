@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import { lorem }from '../constants/lorem'
+import { Box, Typography } from '@mui/material'
+
 
 const roboto = Roboto({
   weight: '400',
@@ -16,8 +17,36 @@ export default function Home() {
         <title>PDX Bots</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className={styles.main}>
-        <>{lorem.title}</>
+      <main>
+        <Box sx={{ 
+          width: '50vw',
+          height: '100%', 
+          position:'absolute',
+        }}>
+          <Image
+            src="/background.jpg" 
+            alt="background"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{
+              objectFit: 'cover',
+            }}
+            />
+        </Box>
+        <Box
+          sx={{
+            width: '100vw',
+            height: '100%', 
+            display: 'flex',
+          }}>
+          <Typography 
+            sx={{
+              margin: '2rem',
+              marginLeft:'55vw',
+              marginTop:'10vh',
+            }}
+          >{lorem.title}</Typography>
+        </Box>
       </main>
     </>
   )
