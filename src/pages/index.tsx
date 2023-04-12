@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { Roboto } from 'next/font/google'
 import { lorem }from '../constants/lorem'
 import { Box, Typography } from '@mui/material'
-import { colors } from '../constants/constants.js'
+import { colors, mediaQueriesThresholds } from '../constants/constants.js'
 import useWindowSize from '@/utils/useWindowSize'
+import RenderIf from '@/components/RenderIf/RenderIf'
 
 
 const roboto = Roboto({
@@ -14,6 +15,7 @@ const roboto = Roboto({
 
 export default function Home() {
   const { width } = useWindowSize()
+
   return (
     <>
       <Head>
@@ -21,22 +23,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
+      <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
         <Box sx={{ 
           width: '50vw',
           height: '100%', 
           position:'absolute',
         }}>
-          <Image
-            src="/background.jpg" 
-            alt="background"
-            fill
-            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{
-              objectFit: 'cover',
-              opacity: '0.7',
-            }}
-            />
-        </Box>
+            <Image
+              src="/background.jpg" 
+              alt="background"
+              fill
+              style={{
+                objectFit: 'cover',
+                opacity: '0.7',
+              }}
+              />
+          </Box>
+        </RenderIf>
         <Box
           sx={{
             width: '100vw',
@@ -46,7 +49,7 @@ export default function Home() {
           <Typography 
             sx={{
               margin: '2rem',
-              marginLeft:'55vw',
+              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
               marginTop:'10vh',
               opacity:'0.5',
               color: colors.text

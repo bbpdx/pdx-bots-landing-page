@@ -15,3 +15,7 @@ export const headerNavigation = [{
 export const colors = {
     text:'#16FF00',
 }
+
+export const mediaQueriesThresholds = {
+    mobile: 600,
+}
