@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google'
 import { lorem }from '../constants/lorem'
 import { Box, Typography } from '@mui/material'
 import { colors } from '../constants/constants.js'
+import useWindowSize from '@/utils/useWindowSize'
 
 
 const roboto = Roboto({
@@ -12,6 +13,7 @@ const roboto = Roboto({
 })
 
 export default function Home() {
+  const { width } = useWindowSize()
   return (
     <>
       <Head>
