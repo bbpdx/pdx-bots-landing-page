@@ -11,3 +11,7 @@ export const headerNavigation = [{
     href: '/contact',
 },
 ]
+
+export const colors = {
+    text:'#16FF00',
+}

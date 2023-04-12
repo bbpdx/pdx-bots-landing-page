@@ -6,6 +6,7 @@ import { headerNavigation } from '../../constants/constants'
 import useWindowSize from '@/utils/useWindowSize';
 import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
 import RenderIf from '../RenderIf/RenderIf';
+import { colors } from '../../constants/constants';
 
 
 const Layout = ({ children }: any) => {
@@ -29,7 +30,7 @@ const Layout = ({ children }: any) => {
               justifyContent: 'flex-end',
               width: '100%',
               alignItems: 'center',
-              color:'#16FF00',
+              color: colors.text,
               opacity: '1',
               paddingRight: '2rem'
             }}>
