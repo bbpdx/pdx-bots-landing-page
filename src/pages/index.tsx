@@ -30,7 +30,7 @@ export default function Home() {
           position:'absolute',
         }}>
             <Image
-              src="/background.jpg" 
+              src="/computerworks.gif" 
               alt="background"
               fill
               style={{
