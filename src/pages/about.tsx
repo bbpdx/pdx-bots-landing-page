@@ -13,10 +13,8 @@ export default function About() {
       container
       gap={2}
       sx={{
-        // display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        // gap: '2rem',
         padding: '2rem',
       }}>
         {memberProfiles.map((member) => ( 
