@@ -11,13 +11,13 @@ export default function About() {
     <main >
       <Grid 
       container
-      gap={2}
+      gap={4}
       sx={{
         justifyContent: 'center',
         alignItems: 'center',
         padding: '2rem',
       }}>
-        {memberProfiles.map((member) => ( 
+        { memberProfiles.map((member) => ( 
           <Grid 
           item
           key={member.name}

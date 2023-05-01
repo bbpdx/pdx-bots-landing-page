@@ -3,23 +3,22 @@ import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
 
 export default function MemberProfile( {member} : any) {
-
+console.log('member', member)
   return (
     <Box 
       sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        border: 'red 1px solid',
       }}>
           <Box sx={{ 
           width: '10rem',
           height: '10rem', 
           position: 'relative',
-          border: 'green 1px solid',
+          border: 'red 1px solid',
         }}>
             <Image
-              src="/Trollface.png" 
+              src={member.image}
               alt="profile pic"
               fill
               />
