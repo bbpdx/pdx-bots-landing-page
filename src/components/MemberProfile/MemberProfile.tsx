@@ -10,6 +10,8 @@ console.log('member', member)
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
       }}>
           <Box sx={{ 
           width: '10rem',
@@ -23,7 +25,7 @@ console.log('member', member)
               fill
               />
           </Box>
-        <Typography variant='h2' sx={{color:'grey'}}>{member.name}</Typography>
+        <Typography variant='h2' sx={{color:'grey', inlineSize: 'min-content'}}>{member.name}</Typography>
         <Typography variant='body1'sx={{color:'grey'}}>{member.description}</Typography>
     </Box>
   )
