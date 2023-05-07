@@ -2,10 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { Box } from '@mui/system';
 import { Button, ButtonGroup } from '@mui/material';
-import { headerNavigation } from '../../constants/constants'
 import useWindowSize from '@/utils/useWindowSize';
 import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
 import RenderIf from '../RenderIf/RenderIf';
+import { colors, mediaQueriesThresholds, headerNavigation } from '../../constants/constants';
+
 
 
 const Layout = ({ children }: any) => {
@@ -29,11 +30,11 @@ const Layout = ({ children }: any) => {
               justifyContent: 'flex-end',
               width: '100%',
               alignItems: 'center',
-              color:'#16FF00',
+              color: colors.text,
               opacity: '1',
               paddingRight: '2rem'
             }}>
-            <RenderIf isTrue={width && width > 600}>
+            <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
               <ButtonGroup>
                 {headerNavigation.map((link) => (
                   <Link href={link.href} key={link.label}>
@@ -46,7 +47,7 @@ const Layout = ({ children }: any) => {
                 ))}
               </ButtonGroup>
             </RenderIf>
-            <RenderIf isTrue={width && width <= 600}>
+            <RenderIf isTrue={width && width <= mediaQueriesThresholds.mobile}>
               <HamburgerDropDown headerNavigation={headerNavigation}/>
             </RenderIf>           
           </Box>

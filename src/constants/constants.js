@@ -34,3 +34,11 @@ export const memberProfiles = [{
     description: 'I am a full-stack software engineer with a background in audio production and a passion for user-centric UX, who believes in inclusion, accessibility, and test-driven production. I excel in analyzing and adjusting work procedures for adaptable/efficient workflow, and my values center on a holistic technical approach to the digital world.'
 },
 ]
+
+export const colors = {
+    text:'#16FF00',
+}
+
+export const mediaQueriesThresholds = {
+    mobile: 600,
+}
