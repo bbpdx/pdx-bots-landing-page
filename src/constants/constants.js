@@ -26,7 +26,7 @@ export const memberProfiles = [{
     name: 'Jordan Laurent',
     image:  '/profile.png',
     position: 'CFO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id risus est. Ut mollis nibh pretium, malesuada turpis a, efficitur metus. Fusce fermentum tortor urna, sed egestas ex maximus ac.',
+    description: 'A full-stack software developer, educator, and multimedia artist in Portland, OR, Jordan [he/him] is constantly working to bring tech education to the masses with an emphasis on accessibility. Currently, he works with Portland Community College to provide learning opportunities for K-12 students from building computer literacy to laser cutting, 3D modeling, and game development.',
 },{
     name: 'Minoka Kakizaki',
     image:  '/profile.png',
