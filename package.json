@@ -29,19 +29,19 @@
     "output:dev": {
       "command": "npm run output",
       "env": {
-        "NEXT_PUBLIC_ASSETS_URL": "https://static.dev.pdxbots.org/assets/"
+        "NEXT_PUBLIC_ASSETS_URL": "https://assets.dev.pdxbots.org/assets/"
       }
     },
     "output:stg": {
       "command": "npm run output",
       "env": {
-        "NEXT_PUBLIC_ASSETS_URL": "https://static.stg.pdxbots.org/assets/"
+        "NEXT_PUBLIC_ASSETS_URL": "https://assets.stg.pdxbots.org/assets/"
       }
     },
     "output:prd": {
       "command": "npm run output",
       "env": {
-        "NEXT_PUBLIC_ASSETS_URL": "https://pdxbots.org/assets/"
+        "NEXT_PUBLIC_ASSETS_URL": "https://assets.pdxbots.org/assets/"
       }
     }
   },
