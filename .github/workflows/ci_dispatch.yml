@@ -35,7 +35,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: ${{ secrets[format('{0}_AWS_ROLE', github.event.inputs.environment)] }}
+          role-to-assume: ${{ secrets[format('{0}_AWS_STATIC_SITE_ROLE', github.event.inputs.environment)] }}
           aws-region: us-west-2
       - name: checkout
         uses: actions/checkout@main 
@@ -55,7 +55,7 @@ jobs:
         env:
           CI: true
           STAGE: ${{ inputs.environment }}
-      - name: deploy
+      - name: build
         run: |
           npm run output:${{ inputs.environment }}
           npm run pre:deploy
