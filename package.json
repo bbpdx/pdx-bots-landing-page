@@ -1,7 +1,7 @@
 {
   "name": "pdx-bots-landing-page",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "clean": "rm -rf .next next-env.d.ts out",
     "dev": "next dev",
