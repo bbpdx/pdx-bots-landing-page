@@ -4,15 +4,15 @@ on:
     types: [closed]
     branches:
       - main
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build:
     if: github.event.pull_request.merged == true
     name: stg
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     environment: stg
     strategy:
       matrix:
