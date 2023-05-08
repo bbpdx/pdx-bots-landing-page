@@ -3,6 +3,10 @@ on:
   pull_request:
     types: [opened, edited, reopened, synchronize]
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     if: >
@@ -12,9 +16,6 @@ jobs:
       && github.head_ref != 'prd'
     name: dev
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
 
     strategy:
       matrix:
