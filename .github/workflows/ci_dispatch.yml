@@ -36,7 +36,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets[format('{0}_AWS_ROLE', github.event.inputs.environment)] }}
-          aws-region: us-east-1
+          aws-region: us-west-2
       - name: checkout
         uses: actions/checkout@main 
         with: 
