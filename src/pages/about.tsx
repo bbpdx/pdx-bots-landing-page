@@ -14,7 +14,7 @@ export default function About() {
       gap={4}
       sx={{
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         padding: '2rem',
       }}>
         { memberProfiles.map((member) => ( 
