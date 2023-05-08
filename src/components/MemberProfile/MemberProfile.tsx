@@ -20,7 +20,7 @@ console.log('member', member)
           border: 'red 1px solid',
         }}>
             <Image
-              src={member.image}
+              src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${member.image}`}
               alt="profile pic"
               fill
               />

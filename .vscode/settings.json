@@ -1,0 +1,14 @@
+{
+    "window.title": "${rootName}${separator}${activeEditorMedium}",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "javascript.format.semicolons": "insert",
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        },
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always"
+}

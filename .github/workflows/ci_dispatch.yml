@@ -1,0 +1,76 @@
+name: Dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      region:
+        description: 'Region to deploy to'
+        required: true
+        default: 'us-west-2'
+        type: choice
+        options:
+          - 'us-west-2'
+      environment:
+        description: 'Environment to dispatch to'
+        required: true
+        type: choice
+        options:
+          - 'prd'
+          - 'stg'
+          - 'dev'
+
+jobs:
+  deploy:
+    name: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    permissions:
+      id-token: write
+      contents: read
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets[format('{0}_AWS_ROLE', github.event.inputs.environment)] }}
+          aws-region: us-west-2
+      - name: checkout
+        uses: actions/checkout@main 
+        with: 
+          fetch-depth: 0
+          ref: refs/heads/main
+      - name: use_node
+        uses: actions/setup-node@main
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install
+        run: |
+          npm ci
+      - name: unit test
+        run: |
+          npm run test:ci:unit
+        env:
+          CI: true
+          STAGE: ${{ inputs.environment }}
+      - name: deploy
+        run: |
+          npm run output:${{ inputs.environment }}
+          npm run pre:deploy
+        env: 
+          CI: true
+          STAGE: ${{ inputs.environment }}
+      - name: sync assets
+        run: |
+          aws s3 sync ./static ${{ secrets[format('{0}_STATIC_ASSET_BUCKET', github.event.inputs.environment)] }}
+        env:
+          CI: true
+          STAGE: ${{ inputs.environment }}
+      - name: deploy
+        run: |
+          aws s3 sync ./out ${{ secrets[format('{0}_STATIC_BUCKET', github.event.inputs.environment)] }}
+        env:
+          CI: true
+          STAGE: ${{ inputs.environment }}

@@ -30,7 +30,7 @@ export default function Home() {
           position:'absolute',
         }}>
             <Image
-              src="/computerworks.gif" 
+              src={`${process.env.NEXT_PUBLIC_ASSETS_URL}computerworks.gif`}
               alt="background"
               fill
               style={{
