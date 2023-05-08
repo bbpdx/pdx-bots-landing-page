@@ -16,8 +16,7 @@
     "output:stg": "bnr output:stg",
     "output:prd": "bnr output:prd",
     "prepare": "sh ./.husky/prepare.sh",
-    "check-branch-name": "node ./scripts/check-branch-name.js",
-    "pre:deploy": "rm -rf ./out/static"
+    "check-branch-name": "node ./scripts/check-branch-name.js"
   },
   "betterScripts": {
     "start": {
