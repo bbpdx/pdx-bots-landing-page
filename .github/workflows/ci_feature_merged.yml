@@ -1,0 +1,72 @@
+name: Feature Merged
+on: 
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  build:
+    if: github.event.pull_request.merged == true
+    name: stg
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    environment: stg
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.STG_AWS_ROLE }}
+          aws-region: us-east-1
+      - name: checkout
+        uses: actions/checkout@main 
+        with: 
+          fetch-depth: 0
+          ref: refs/heads/main
+      - name: use_node
+        uses: actions/setup-node@main
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install
+        run: |
+          npm ci
+      - name: unit test
+        run: |
+          npm run test:ci:unit
+        env:
+          CI: true
+          STAGE: stg
+      - name: rm branch protection rules
+        run: |
+          . ./scripts/ci/disable-branch-protection.sh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: deploy
+        run: |
+          npm run output:stg
+          npm run pre:deploy
+        env: 
+          CI: true
+          STAGE: stg
+      - name: sync assets
+        run: |
+          aws s3 sync ./static ${{ secrets.STG_STATIC_ASSET_BUCKET }}
+        env:
+          CI: true
+          STAGE: stg
+      - name: deploy stg
+        run: |
+          aws s3 sync ./out ${{ secrets.STG_ASSET_BUCKET }}
+        env:
+          CI: true
+          STAGE: stg
+      - name: enable branch protection rules
+        run: |
+          . ./scripts/ci/enable-branch-protection.sh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

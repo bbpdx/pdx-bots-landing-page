@@ -1,0 +1,76 @@
+name: Feature PR
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  build:
+    if: >
+      contains(github.event.pull_request.title, 'WIP') == false
+      && github.event.pull_request.draft == false
+      && github.head_ref != 'main'
+      && github.head_ref != 'prd'
+    name: dev
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+    
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.DEV_AWS_ROLE }}
+          aws-region: us-east-1
+      - name: checkout
+        uses: actions/checkout@main
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: use_node
+        uses: actions/setup-node@main
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: checkout current branch
+        run: git checkout HEAD
+      - name: npm install
+        run: |
+          npm ci
+      - name: unit test
+        run: |
+          npm run test:ci:unit
+        env: 
+          CI: true
+          STAGE: dev
+      - name: prepare deploy dev east 1
+        run: |
+          npm run output:dev
+          npm run pre:deploy
+        env:
+          CI: true
+          STAGE: dev
+      - name: sync assets
+        run: |
+          aws s3 sync ./static ${{ secrets.DEV_STATIC_ASSET_BUCKET }}
+        env:
+          CI: true
+          STAGE: dev
+      - name: deploy dev
+        run: |
+          aws s3 sync ./out ${{ secrets.DEV_ASSET_BUCKET }}
+        env:
+          CI: true
+          STAGE: dev
+      - name: cache node modules
+        uses: actions/cache@main
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
