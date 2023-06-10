@@ -14,6 +14,7 @@ export const headerNavigation = [{
 
 export const colors = {
     text:'#16FF00',
+    secondary:'#02FFFF'
 }
 
 export const mediaQueriesThresholds = {

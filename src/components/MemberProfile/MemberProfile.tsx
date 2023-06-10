@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
+import { colors } from '../../constants/constants'
+
 
 const MemberProfile = ( {member} : any) => {
   return (
@@ -23,8 +25,31 @@ const MemberProfile = ( {member} : any) => {
               fill
               />
           </Box>
-        <Typography variant='h2' sx={{color:'grey', inlineSize: 'min-content'}}>{member.name}</Typography>
-        <Typography variant='body1'sx={{color:'grey'}}>{member.description}</Typography>
+        <Typography
+          variant='h2'
+          sx={{
+            color: colors.secondary,
+            opacity:'0.7',
+            inlineSize: 'min-content'
+          }}>
+            {member.name}
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            color: colors.secondary,
+            opacity:'0.5'
+          }}>
+            {member.position}
+        </Typography>
+        <Typography
+          variant='body1'
+          sx={{
+            color: colors.text,
+            opacity:'0.5'
+          }}>
+            {member.description}
+        </Typography>
     </Box>
   )
 }

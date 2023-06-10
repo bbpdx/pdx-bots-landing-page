@@ -67,7 +67,7 @@ const Home = () => {
               margin: '2rem',
               marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
               marginTop:'10vh',
-              opacity:'0.5',
+              opacity:'0.7',
               color: colors.text
             }}
             >{keyPoints.map((keyPoint) => <DropDownText key={keyPoint.title} textObject={keyPoint}/> )}
