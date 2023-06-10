@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Roboto } from 'next/font/google'
 import { missionStatement, keyPoints }from '../constants/strings'
 import { Box, Grid } from '@mui/material'
-import {  mediaQueriesThresholds } from '../constants/constants.js'
+import { mediaQueriesThresholds } from '../constants/constants.js'
 import useWindowSize from '@/utils/useWindowSize'
 import RenderIf from '@/components/RenderIf/RenderIf'
 import DropDownText from "@/components/DropDownText/DropDownText"

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
-import { colors } from '../../constants/constants'
+import { colors, font } from '../../constants/constants'
 
 
 const MemberProfile = ( {member} : any) => {
@@ -30,7 +30,7 @@ const MemberProfile = ( {member} : any) => {
           sx={{
             color: colors.secondary,
             opacity:'0.7',
-            fontFamily: 'Bungee Hairline',
+            fontFamily: font.main,
             inlineSize: 'min-content'
           }}>
             {member.name}
@@ -48,7 +48,7 @@ const MemberProfile = ( {member} : any) => {
           sx={{
             color: colors.text,
             opacity:'0.6',
-            fontFamily: 'monospace'
+            fontFamily: font.text
           }}>
             {member.description}
         </Typography>

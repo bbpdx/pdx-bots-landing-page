@@ -5,7 +5,7 @@ import { Button, ButtonGroup } from '@mui/material';
 import useWindowSize from '@/utils/useWindowSize';
 import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
 import RenderIf from '../RenderIf/RenderIf';
-import { colors, mediaQueriesThresholds, headerNavigation } from '../../constants/constants';
+import { colors, mediaQueriesThresholds, headerNavigation, font } from '../../constants/constants';
 
 
 
@@ -18,9 +18,9 @@ const Layout = ({ children }: any) => {
           display: 'flex',
           flexDirection: 'row',
           color: 'white',
-          backgroundColor: '#545454',
+          backgroundColor: colors.headerBackground,
           opacity: '.8',
-          fontFamily: 'Bungee Hairline'
+          fontFamily: font.main
         }}>
           <Link href='/'>
               <h1>PDX Bots</h1>
@@ -38,9 +38,12 @@ const Layout = ({ children }: any) => {
               <ButtonGroup>
                 {headerNavigation.map((link) => (
                   <Link href={link.href} key={link.label}>
-                    <Button 
+                    <Button
                       variant='text'
-                      sx={{ color:'#16FF00', fontFamily: 'Bungee Hairline', fontWeight:400}}>
+                      sx={{
+                        color:'#16FF00',
+                        fontFamily: font.main,
+                        fontWeight:400}}>
                         {link.label}
                     </Button>
                   </Link>
@@ -49,7 +52,7 @@ const Layout = ({ children }: any) => {
             </RenderIf>
             <RenderIf isTrue={width && width <= mediaQueriesThresholds.mobile}>
               <HamburgerDropDown headerNavigation={headerNavigation}/>
-            </RenderIf>           
+            </RenderIf>
           </Box>
         </Box>
       </header>
