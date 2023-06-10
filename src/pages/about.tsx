@@ -1,7 +1,6 @@
 import React from 'react'
-import styles from '@/styles/Home.module.css'
 import MemberProfile from '@/components/MemberProfile/MemberProfile'
-import {Box, Grid}  from '@mui/material'
+import { Grid }  from '@mui/material'
 import { memberProfiles } from '@/constants/strings'
 
 const About = () => {

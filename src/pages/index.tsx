@@ -7,6 +7,7 @@ import { colors, mediaQueriesThresholds } from '../constants/constants.js'
 import useWindowSize from '@/utils/useWindowSize'
 import RenderIf from '@/components/RenderIf/RenderIf'
 import DropDownText from "@/components/DropDownText/DropDownText"
+import Text from '@/components/Text/Text'
 
 
 const roboto = Roboto({
@@ -52,36 +53,18 @@ const Home = () => {
             display: 'flex',
           }}>
           <Box>
-          <Typography
-            sx={{
-              margin: '2rem',
-              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
-              marginTop:'10vh',
-              opacity:'0.5',
-              color: colors.text
-            }}
-            >{missionStatement.opening}
-          </Typography>
+          <Text text={missionStatement.opening}/>
           <Typography
             sx={{
               margin: '2rem',
               marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
               marginTop:'10vh',
               opacity:'0.7',
-              color: colors.text
+              color: colors.text,
             }}
             >{keyPoints.map((keyPoint) => <DropDownText key={keyPoint.title} textObject={keyPoint}/> )}
           </Typography>
-          <Typography
-            sx={{
-              margin: '2rem',
-              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
-              marginTop:'10vh',
-              opacity:'0.5',
-              color: colors.text
-            }}
-            >{missionStatement.closing}
-          </Typography>
+          <Text text={missionStatement.closing}/>
           </Box>
         </Box>
       </main>

@@ -18,7 +18,7 @@ const Layout = ({ children }: any) => {
           display: 'flex',
           flexDirection: 'row',
           color: 'white',
-          backgroundColor: 'grey',
+          backgroundColor: '#545454',
           opacity: '.8',
           fontFamily: 'Bungee Hairline'
         }}>

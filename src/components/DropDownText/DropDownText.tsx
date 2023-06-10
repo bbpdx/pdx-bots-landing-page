@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material"
 import React, { useState } from 'react'
 import RenderIf from "../RenderIf/RenderIf"
 import { colors } from '../../constants/constants'
+import { Opacity } from "@mui/icons-material"
 
 interface DropDownTextProps {
   key: string
@@ -23,13 +24,20 @@ const DropDownText = (props: DropDownTextProps) => {
         >
         <Typography
           variant="h6"
+          sx={{
+            fontFamily: 'Bungee Hairline',
+            fontWeight:'bold'
+          }}
         >
-          {`- ${title}`}
+          {`${title}`}
         </Typography>
       </Button>
       <RenderIf isTrue={isHovered}>
         <Typography
-          sx={{opacity: .7}}
+          sx={{
+            fontFamily: 'monospace',
+            opacity: 0.8
+          }}
         >
           {detail}
         </Typography>
