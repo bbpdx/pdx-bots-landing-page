@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material"
-import { AnySoaRecord } from "dns"
 import React, { useState } from 'react'
 import RenderIf from "../RenderIf/RenderIf"
 
@@ -18,7 +17,8 @@ const DropDownText = (props: DropDownTextProps) => {
     <Box>
       <Button
         onMouseOver={()=> setIsHovered(true)}
-        onMouseLeave={()=> setIsHovered(false)}>
+        onMouseLeave={()=> setIsHovered(false)}
+        >
         <Typography variant="h6">
           {title}
         </Typography>
