@@ -16,7 +16,7 @@ export const memberProfiles = [{
     name: 'Francesca Frattaroli',
     image: 'profile.png',
     position: 'CEO',
-    description: 'Francesca Frattaroli, BSME - Maker, educator, & lifelong learner based in Portland, OR '
+    description: 'Francesca Frattaroli, BSME - Maker, educator, & lifelong learner based in Portland, OR'
 },{
     name: 'Morgan Litton',
     image:  'profile.png',

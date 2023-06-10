@@ -4,12 +4,11 @@ import MemberProfile from '@/components/MemberProfile/MemberProfile'
 import {Box, Grid}  from '@mui/material'
 import { memberProfiles } from '@/constants/constants'
 
-export default function About() {
+const About = () => {
 
-  console.log('memberProfiles', memberProfiles)
   return (
     <main >
-      <Grid 
+      <Grid
       container
       gap={4}
       sx={{
@@ -17,8 +16,8 @@ export default function About() {
         alignItems: 'flex-start',
         padding: '2rem',
       }}>
-        { memberProfiles.map((member) => ( 
-          <Grid 
+        {memberProfiles.map((member) => (
+          <Grid
           item
           key={member.name}
           xs={11}
@@ -33,3 +32,5 @@ export default function About() {
     </main>
   )
 }
+
+export default About

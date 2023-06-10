@@ -2,10 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
 
-export default function MemberProfile( {member} : any) {
-console.log('member', member)
+const MemberProfile = ( {member} : any) => {
   return (
-    <Box 
+    <Box
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -13,11 +12,10 @@ console.log('member', member)
         alignItems: 'center',
         textAlign: 'center'
       }}>
-          <Box sx={{ 
+          <Box sx={{
           width: '10rem',
-          height: '10rem', 
+          height: '10rem',
           position: 'relative',
-          border: 'red 1px solid',
         }}>
             <Image
               src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${member.image}`}
@@ -30,3 +28,4 @@ console.log('member', member)
     </Box>
   )
 }
+export default MemberProfile

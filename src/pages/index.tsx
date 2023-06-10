@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
-import { lorem }from '../constants/lorem'
+import { missionStatement }from '../constants/strings'
 import { Box, Typography } from '@mui/material'
 import { colors, mediaQueriesThresholds } from '../constants/constants.js'
 import useWindowSize from '@/utils/useWindowSize'
@@ -13,7 +13,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-export default function Home() {
+const Home = () => {
   const { width } = useWindowSize()
 
   return (
@@ -24,9 +24,9 @@ export default function Home() {
       </Head>
       <main>
       <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
-        <Box sx={{ 
+        <Box sx={{
           width: '50vw',
-          height: '100%', 
+          height: '100%',
           position:'absolute',
         }}>
             <Image
@@ -43,10 +43,11 @@ export default function Home() {
         <Box
           sx={{
             width: '100vw',
-            height: '100%', 
+            height: '100%',
             display: 'flex',
           }}>
-          <Typography 
+          <Box>
+          <Typography
             sx={{
               margin: '2rem',
               marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
@@ -54,9 +55,21 @@ export default function Home() {
               opacity:'0.5',
               color: colors.text
             }}
-          >{lorem.title}</Typography>
+            >{missionStatement.opening}</Typography>
+            <Typography
+            sx={{
+              margin: '2rem',
+              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
+              marginTop:'10vh',
+              opacity:'0.5',
+              color: colors.text
+            }}
+            >{missionStatement.closing}</Typography>
+          </Box>
         </Box>
       </main>
     </>
   )
 }
+
+export default Home
