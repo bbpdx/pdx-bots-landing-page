@@ -1,8 +1,7 @@
-import { Box, Button, Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 import React, { useState } from 'react'
 import RenderIf from "../RenderIf/RenderIf"
 import { colors } from '../../constants/constants'
-import { Opacity } from "@mui/icons-material"
 
 interface DropDownTextProps {
   key: string
@@ -16,7 +15,7 @@ const DropDownText = (props: DropDownTextProps) => {
   const { textObject: { title, detail } } = props
 
   return (
-    <Box>
+    <>
       <Button
         onMouseOver={()=> setIsHovered(true)}
         onMouseLeave={()=> setIsHovered(false)}
@@ -36,13 +35,14 @@ const DropDownText = (props: DropDownTextProps) => {
         <Typography
           sx={{
             fontFamily: 'monospace',
-            opacity: 0.8
+            opacity: 0.6,
+            color: colors.text
           }}
         >
           {detail}
         </Typography>
       </RenderIf>
-    </Box>
+    </>
 
   )
 }

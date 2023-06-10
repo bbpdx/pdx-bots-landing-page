@@ -5,13 +5,11 @@ import useWindowSize from "@/utils/useWindowSize"
 
 const Text = (props: any) => {
   const { text } = props
-    const { width } = useWindowSize()
 
   return (
     <Typography
       sx={{
-          marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
-          marginTop:'10vh',
+          marginTop:'5vh',
           opacity:'0.6',
           color: colors.text,
           fontFamily: 'monospace',
