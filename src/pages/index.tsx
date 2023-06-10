@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
-import { missionStatement }from '../constants/strings'
+import { missionStatement, keyPoints }from '../constants/strings'
 import { Box, Typography } from '@mui/material'
 import { colors, mediaQueriesThresholds } from '../constants/constants.js'
 import useWindowSize from '@/utils/useWindowSize'
 import RenderIf from '@/components/RenderIf/RenderIf'
+import DropDownText from "@/components/DropDownText/DropDownText"
 
 
 const roboto = Roboto({
@@ -15,6 +16,10 @@ const roboto = Roboto({
 
 const Home = () => {
   const { width } = useWindowSize()
+
+  const dropDownTextList = keyPoints.map((keyPoint) => {
+    return <DropDownText key={keyPoint.title} textObject={keyPoint}/>
+  })
 
   return (
     <>
@@ -55,8 +60,9 @@ const Home = () => {
               opacity:'0.5',
               color: colors.text
             }}
-            >{missionStatement.opening}</Typography>
-            <Typography
+            >{missionStatement.opening}
+          </Typography>
+          <Typography
             sx={{
               margin: '2rem',
               marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
@@ -64,7 +70,18 @@ const Home = () => {
               opacity:'0.5',
               color: colors.text
             }}
-            >{missionStatement.closing}</Typography>
+            >{keyPoints.map((keyPoint) => <DropDownText key={keyPoint.title} textObject={keyPoint}/> )}
+          </Typography>
+          <Typography
+            sx={{
+              margin: '2rem',
+              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
+              marginTop:'10vh',
+              opacity:'0.5',
+              color: colors.text
+            }}
+            >{missionStatement.closing}
+          </Typography>
           </Box>
         </Box>
       </main>
