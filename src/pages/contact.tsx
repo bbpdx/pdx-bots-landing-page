@@ -1,11 +1,15 @@
-import React from 'react'
-import styles from '@/styles/Home.module.css'
+import Header from '@/components/Header';
+import styles from '@/styles/Home.module.css';
 
-
-export default function Contact() {
+const Contact = () => {
   return (
-    <main className={styles.main}>
-      <div>contact</div>
-    </main>
+    <>
+    <Header page="/contact" />
+      <main className={styles.main}>
+        <div>contact</div>
+      </main>
+    </>
   )
-}
+};
+
+export default Contact;
