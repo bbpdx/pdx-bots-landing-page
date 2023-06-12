@@ -1,6 +1,7 @@
 import { Button, ClickAwayListener, Grow,  Link,  MenuItem, MenuList, Paper, Popper } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import { styles } from './styles'
 
 const HamburgerDropDown = (props: any) => {
   const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ const HamburgerDropDown = (props: any) => {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <MenuIcon sx={{ color:'#16FF00' }}></MenuIcon>
+          <MenuIcon sx={styles.menuIcon}></MenuIcon>
         </Button>
         <Popper
           open={open}
@@ -77,18 +78,13 @@ const HamburgerDropDown = (props: any) => {
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
-                    sx={{
-                      backgroundColor: 'black',
-                    }}
+                    sx={styles.menuList}
                   >
                     { headerNavigation.map((item: any) => {
                       return (
                         <Link  href={item.href} key={item.label}  >
-                          <MenuItem onClick={handleClose} 
-                          sx={{
-                            fontFamily: 'Bungee Hairline',
-                            color:'#16FF00',
-                          }}>
+                          <MenuItem onClick={handleClose}
+                          sx={styles.menuItem}>
                             {item.label}
                           </MenuItem>
                         </Link>

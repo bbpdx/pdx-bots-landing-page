@@ -10,7 +10,6 @@ const styles = {
     margin: '2rem',
     marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
     marginTop:'10vh',
-    opacity:'0.5',
     color: colors.text
   })
 };

@@ -1,20 +1,13 @@
 import { Typography } from "@mui/material"
 import React from 'react'
-import {colors, mediaQueriesThresholds} from '@/constants'
-import useWindowSize from "@/utils/useWindowSize"
+import { styles } from './styles'
+
 
 const Text = (props: any) => {
   const { text } = props
 
   return (
-    <Typography
-      sx={{
-          marginTop:'5vh',
-          opacity:'0.6',
-          color: colors.text,
-          fontFamily: 'monospace',
-        }}
-        >
+    <Typography sx={styles.text} >
       {text}
     </Typography>
   )

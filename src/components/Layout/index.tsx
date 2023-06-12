@@ -12,41 +12,25 @@ import {
   font
 } from '@/constants';
 
+import { styles }from './styles'
+
 const Layout = ({ children }: any) => {
   const { width } = useWindowSize();
   return (
     <div>
       <header>
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          color: 'white',
-          backgroundColor: colors.headerBackground,
-          opacity: '.8',
-          fontFamily: font.main
-        }}>
+        <Box sx={styles.header}>
           <Link href='/'>
               <h1>PDX Bots</h1>
           </Link>
-          <Box sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              width: '100%',
-              alignItems: 'center',
-              color: colors.text,
-              opacity: '1',
-              paddingRight: '2rem'
-            }}>
+          <Box sx={styles.headerNavBox}>
             <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
               <ButtonGroup>
                 {headerNavigation.map((link) => (
                   <Link href={link.href} key={link.label}>
                     <Button
                       variant='text'
-                      sx={{
-                        color:'#16FF00',
-                        fontFamily: font.main,
-                        fontWeight:400}}>
+                      sx={styles.navigationButton}>
                         {link.label}
                     </Button>
                   </Link>

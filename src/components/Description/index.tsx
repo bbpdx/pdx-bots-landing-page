@@ -3,7 +3,6 @@ import useWindowSize from '@/utils/useWindowSize';
 import styles from './styles';
 import Text from '@/components/Text'
 import { missionStatement, keyPoints } from "@/constants/strings";
-import { mediaQueriesThresholds } from "@/constants";
 import DropDownText from "../DropDownText";
 
 const DESCRIPTION_BODY = `Hello World`;
@@ -15,15 +14,10 @@ const Description = () => {
           sx={styles.descriptionBox}>
         <Grid item
             justifyContent='flex-start'
-            sx={{
-              marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '52vw': '2rem',
-              marginRight: '2rem'
-            }}>
+            sx={styles.typography(width)}>
             <Text text={missionStatement.opening}/>
             <Box
-              sx={{
-              marginTop: '2rem'
-              }}>
+              sx={styles.typography(null)}>
               {keyPoints.map((keyPoint) => <DropDownText key={keyPoint.title} textObject={keyPoint}/> )}
             </Box>
             <Text text={missionStatement.closing}/>

@@ -1,5 +1,5 @@
 import {Grid}  from '@mui/material';
-import MemberProfile from '@/components/MemberProfile';
+import ProfileCard from '@/components/ProfileCard';
 import Header from '@/components/Header';
 import { memberProfiles } from '@/constants/strings.js';
 
@@ -24,7 +24,7 @@ const About = () => {
             sm={6}
             md={4}
             >
-              <MemberProfile member={member}/>
+              <ProfileCard member={member}/>
             </Grid>
           )
           )}

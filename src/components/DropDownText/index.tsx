@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material"
 import React, { useState } from 'react'
 import RenderIf from "@/utils/renderIf"
-import { colors } from '@/constants'
+import { styles } from './styles'
 
 interface DropDownTextProps {
   key: string
@@ -19,25 +19,17 @@ const DropDownText = (props: DropDownTextProps) => {
       <Button
         onMouseOver={()=> setIsHovered(true)}
         onMouseLeave={()=> setIsHovered(false)}
-        sx={{color: colors.secondary }}
         >
         <Typography
           variant="h6"
-          sx={{
-            fontFamily: 'Bungee Hairline',
-            fontWeight:'bold'
-          }}
+          sx={styles.title}
         >
-          {`${title}`}
+          {`* ${title} * `}
         </Typography>
       </Button>
       <RenderIf isTrue={isHovered}>
         <Typography
-          sx={{
-            fontFamily: 'monospace',
-            opacity: 0.6,
-            color: colors.text
-          }}
+          sx={styles.details}
         >
           {detail}
         </Typography>

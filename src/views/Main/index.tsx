@@ -4,6 +4,7 @@ import Description from '@/components/Description';
 import RenderIf from '@/utils/renderIf';
 import useWindowSize from '@/utils/useWindowSize';
 import { mediaQueriesThresholds } from '@/constants';
+import { styles } from './styles'
 
 
 const Main = () => {
@@ -11,11 +12,7 @@ const Main = () => {
     return (
         <main>
         <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
-            <Box sx={{
-            width: '50vw',
-            height: '100%',
-            position:'absolute',
-            }}>
+            <Box sx={styles.imageBox}>
                 <Image
                 src={`${process.env.NEXT_PUBLIC_ASSETS_URL}computerworks.gif`}
                 alt="background"
