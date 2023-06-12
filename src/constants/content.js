@@ -1,5 +1,5 @@
 
-export const memberProfiles = [{
+export const MEMBER_PROFILES = [{
     name: 'Francesca Frattaroli',
     image: 'profile.png',
     position: 'CEO',
@@ -22,7 +22,7 @@ export const memberProfiles = [{
 },
 ]
 
-export const missionStatement = {
+export const MISSION_STATEMENT = {
     opening: `At PDX Bots, our mission is to foster a vibrant and inclusive community of
         robotics enthusiasts. We are dedicated to promoting equal education, opportunities,
         and the consolidation of open-source robotics, ensuring accessibility for all.
@@ -34,7 +34,7 @@ export const missionStatement = {
         create lasting connections, and drive innovation.
         Together, we can build a community that inspires and supports each other in their robotics journey.`
 }
-export const keyPoints = [
+export const KEY_POINTS = [
     {
         title: `Equal Education and Opportunities`,
         detail:`We believe in providing equal educational opportunities for individuals interested in robotics.

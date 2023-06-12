@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import { memberProfiles } from "@/constants/content";
+import { MEMBER_PROFILES } from "@/constants/content";
 import ProfileCard from "@/components/ProfileCard";
 import { styles } from './styles' 
 
@@ -13,7 +13,7 @@ const AboutUs = () => {
         container
         gap={4}
         sx={styles.main}>
-          { memberProfiles.map((member: any) => (
+          { MEMBER_PROFILES.map((member: any) => (
             <Grid
             item
             key={member.name}
