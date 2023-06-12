@@ -6,6 +6,8 @@ import { styles } from './styles'
 
 
 const AboutUs = () => {
+  return (
+  <>
    <main >
         <Grid
         container
@@ -25,4 +27,7 @@ const AboutUs = () => {
           )}
         </Grid>
       </main>
-}
+  </>
+)}
+
+export default AboutUs
