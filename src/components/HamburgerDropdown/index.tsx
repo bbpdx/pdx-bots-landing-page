@@ -1,10 +1,10 @@
-import { Button, ClickAwayListener, colors, Grow,  Link,  MenuItem, MenuList, Paper, Popper } from '@mui/material'
-import React from 'react'
+import { Button, ClickAwayListener, Grow,  Link,  MenuItem, MenuList, Paper, Popper } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const HamburgerDropDown = (props: any) => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement>(null);
 
   const { headerNavigation } = props;
 
@@ -23,7 +23,7 @@ const HamburgerDropDown = (props: any) => {
     setOpen(false);
   };
 
-  function handleListKeyDown(event: React.KeyboardEvent) {
+  const handleListKeyDown = (event: React.KeyboardEvent) =>  {
     if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
@@ -32,14 +32,16 @@ const HamburgerDropDown = (props: any) => {
     }
   }
 
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
+  const prevOpen = useRef(open);
+
+  useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current!.focus();
     }
 
     prevOpen.current = open;
   }, [open]);
+
   return (
     <div> 
      <Button

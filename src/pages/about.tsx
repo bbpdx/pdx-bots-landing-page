@@ -1,35 +1,37 @@
-import React from 'react'
-import MemberProfile from '@/components/MemberProfile/MemberProfile'
-import { Grid }  from '@mui/material'
-import { memberProfiles } from '@/constants/strings'
+import {Grid}  from '@mui/material';
+import MemberProfile from '@/components/MemberProfile';
+import Header from '@/components/Header';
+import { memberProfiles } from '@/constants/strings.js';
 
 const About = () => {
-
   return (
-    <main >
-      <Grid
-      container
-      gap={4}
-      sx={{
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        padding: '2rem',
-      }}>
-        {memberProfiles.map((member) => (
-          <Grid
-          item
-          key={member.name}
-          xs={11}
-          sm={6}
-          md={4}
-          >
-            <MemberProfile member={member}/>
-          </Grid>
-        )
-        )}
-      </Grid>
-    </main>
+    <>
+      <Header page="/about" />
+      <main >
+        <Grid
+        container
+        gap={4}
+        sx={{
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          padding: '2rem',
+        }}>
+          { memberProfiles.map((member: any) => (
+            <Grid
+            item
+            key={member.name}
+            xs={11}
+            sm={6}
+            md={4}
+            >
+              <MemberProfile member={member}/>
+            </Grid>
+          )
+          )}
+        </Grid>
+      </main>
+    </>
   )
-}
+};
 
-export default About
+export default About;

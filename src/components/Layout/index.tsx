@@ -3,11 +3,14 @@ import Link from 'next/link';
 import { Box } from '@mui/system';
 import { Button, ButtonGroup } from '@mui/material';
 import useWindowSize from '@/utils/useWindowSize';
-import HamburgerDropDown from '../HambergerDropdown/HambergerDropDown';
-import RenderIf from '../RenderIf/RenderIf';
-import { colors, mediaQueriesThresholds, headerNavigation, font } from '../../constants/constants';
-
-
+import RenderIf from '@/utils/renderIf';
+import HamburgerDropDown from '@/components/HamburgerDropdown';
+import {
+  colors,
+  mediaQueriesThresholds,
+  headerNavigation,
+  font
+} from '@/constants';
 
 const Layout = ({ children }: any) => {
   const { width } = useWindowSize();
@@ -57,9 +60,7 @@ const Layout = ({ children }: any) => {
         </Box>
       </header>
       <main>{children}</main>
-      <footer>
-        {/* Your footer content goes here */}
-      </footer>
+      <footer/>
     </div>
   );
 };

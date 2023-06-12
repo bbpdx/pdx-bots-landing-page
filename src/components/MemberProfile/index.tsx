@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
-import { colors, font } from '../../constants/constants'
+import { colors, font } from '@/constants'
 
 
 const MemberProfile = ( {member} : any) => {

@@ -44,7 +44,7 @@ jobs:
       - name: unit test
         run: |
           npm run test:ci:unit
-        env: 
+        env:
           CI: true
           STAGE: dev
       - name: prepare deploy dev east 1

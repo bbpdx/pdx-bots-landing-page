@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material"
 import React from 'react'
-import {colors, mediaQueriesThresholds} from '../../constants/constants'
+import {colors, mediaQueriesThresholds} from '@/constants'
 import useWindowSize from "@/utils/useWindowSize"
 
 const Text = (props: any) => {

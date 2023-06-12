@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material"
 import React, { useState } from 'react'
-import RenderIf from "../RenderIf/RenderIf"
-import { colors } from '../../constants/constants'
+import RenderIf from "@/utils/renderIf"
+import { colors } from '@/constants'
 
 interface DropDownTextProps {
   key: string
