@@ -7,8 +7,8 @@ import RenderIf from '@/utils/renderIf';
 import HamburgerDropDown from '@/components/HamburgerDropdown';
 import {
   colors,
-  mediaQueriesThresholds,
-  headerNavigation,
+  MEDIA_QUERIES_THRESHOLDS,
+  HEADER_NAVIGATION,
   font
 } from '@/constants';
 
@@ -24,9 +24,9 @@ const Layout = ({ children }: any) => {
               <h1>PDX Bots</h1>
           </Link>
           <Box sx={styles.headerNavBox}>
-            <RenderIf isTrue={width && width > mediaQueriesThresholds.mobile}>
+            <RenderIf isTrue={width && width > MEDIA_QUERIES_THRESHOLDS.mobile}>
               <ButtonGroup>
-                {headerNavigation.map((link) => (
+                {HEADER_NAVIGATION.map((link) => (
                   <Link href={link.href} key={link.label}>
                     <Button
                       variant='text'
@@ -37,8 +37,8 @@ const Layout = ({ children }: any) => {
                 ))}
               </ButtonGroup>
             </RenderIf>
-            <RenderIf isTrue={width && width <= mediaQueriesThresholds.mobile}>
-              <HamburgerDropDown headerNavigation={headerNavigation}/>
+            <RenderIf isTrue={width && width <= MEDIA_QUERIES_THRESHOLDS.mobile}>
+              <HamburgerDropDown HEADER_NAVIGATION={HEADER_NAVIGATION}/>
             </RenderIf>
           </Box>
         </Box>

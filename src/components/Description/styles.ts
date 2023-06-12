@@ -1,4 +1,4 @@
-import { colors, mediaQueriesThresholds } from '@/constants';
+import { colors, MEDIA_QUERIES_THRESHOLDS } from '@/constants';
 
 const styles = {
   descriptionBox: {
@@ -8,7 +8,7 @@ const styles = {
   },
   typography: (width: number | null) => ({
     margin: '2rem',
-    marginLeft: (width && width > mediaQueriesThresholds.mobile) ? '55vw': '2rem',
+    marginLeft: (width && width > MEDIA_QUERIES_THRESHOLDS.mobile) ? '55vw': '2rem',
     marginTop:'10vh',
     color: colors.text
   })

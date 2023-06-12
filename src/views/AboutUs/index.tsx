@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import { memberProfiles } from "@/constants/strings";
+import { memberProfiles } from "@/constants/content";
 import ProfileCard from "@/components/ProfileCard";
 import { styles } from './styles' 
 

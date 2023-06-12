@@ -1,4 +1,4 @@
-export const headerNavigation = [{
+export const HEADER_NAVIGATION = [{
     label: 'Home',
     href: '/',
 },
@@ -23,6 +23,6 @@ export const font = {
     text: 'monospace'
 }
 
-export const mediaQueriesThresholds = {
+export const MEDIA_QUERIES_THRESHOLDS = {
     mobile: 600,
 }

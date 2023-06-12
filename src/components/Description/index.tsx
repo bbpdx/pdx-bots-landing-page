@@ -2,10 +2,8 @@ import { Box, Grid, Typography } from '@mui/material';
 import useWindowSize from '@/utils/useWindowSize';
 import styles from './styles';
 import Text from '@/components/Text'
-import { missionStatement, keyPoints } from "@/constants/strings";
+import { missionStatement, keyPoints } from "@/constants/content";
 import DropDownText from "../DropDownText";
-
-const DESCRIPTION_BODY = `Hello World`;
 
 const Description = () => {
     const { width } = useWindowSize();

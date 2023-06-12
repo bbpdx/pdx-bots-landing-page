@@ -7,7 +7,7 @@ const HamburgerDropDown = (props: any) => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
 
-  const { headerNavigation } = props;
+  const { HEADER_NAVIGATION } = props;
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -80,7 +80,7 @@ const HamburgerDropDown = (props: any) => {
                     onKeyDown={handleListKeyDown}
                     sx={styles.menuList}
                   >
-                    { headerNavigation.map((item: any) => {
+                    { HEADER_NAVIGATION.map((item: any) => {
                       return (
                         <Link  href={item.href} key={item.label}  >
                           <MenuItem onClick={handleClose}
