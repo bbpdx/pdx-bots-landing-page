@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
-import { colors, font } from '@/constants'
+// import { colors, font } from '@/constants'
 import { styles } from './styles'
 
 
@@ -23,7 +23,7 @@ const ProfileCard = ( {member} : any) => {
         </Typography>
         <Typography
           variant="h6"
-          sx={styles.memberPostion}>
+          sx={styles.memberPosition}>
             {member.position}
         </Typography>
         <Typography

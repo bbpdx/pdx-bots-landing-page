@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import useWindowSize from '@/utils/useWindowSize';
 import styles from './styles';
 import Text from '@/components/Text'

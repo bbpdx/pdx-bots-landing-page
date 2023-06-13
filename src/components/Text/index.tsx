@@ -5,7 +5,6 @@ import { styles } from './styles'
 
 const Text = (props: any) => {
   const { text } = props
-
   return (
     <Typography sx={styles.text} >
       {text}

@@ -6,10 +6,8 @@ import useWindowSize from '@/utils/useWindowSize';
 import RenderIf from '@/utils/renderIf';
 import HamburgerDropDown from '@/components/HamburgerDropdown';
 import {
-  colors,
   MEDIA_QUERIES_THRESHOLDS,
   HEADER_NAVIGATION,
-  font
 } from '@/constants';
 
 import { styles }from './styles'

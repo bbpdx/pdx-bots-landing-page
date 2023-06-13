@@ -1,4 +1,3 @@
-import { font, colors } from '@/constants'
 
 export const styles = {
   profileCardOuterBox : {
@@ -14,18 +13,19 @@ export const styles = {
     position: 'relative',
   },
   memberName: {
-    color: colors.secondary,
+    color: '#02FFFF',
     opacity:'0.7',
-    fontFamily: font.main,
+    fontFamily: 'Bungee Hairline',
     inlineSize: 'min-content'
   },
-  memberPostion: {
-    color: colors.secondary,
+  memberPosition: {
+    color:'#02FFFF',
     opacity:'0.5'
   },
   memberSummary: {
-    color: colors.text,
+    color: '#16FF00',
     opacity:'0.6',
-    fontFamily: font.text
+    fontFamily:  'monospace'
+
   }
 }

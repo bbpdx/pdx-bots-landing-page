@@ -12,17 +12,6 @@ export const HEADER_NAVIGATION = [{
 },
 ]
 
-export const colors = {
-    text:'#16FF00',
-    secondary:'#02FFFF',
-    headerBackground:'#545454'
-}
-
-export const font = {
-    main: 'Bungee Hairline',
-    text: 'monospace'
-}
-
 export const MEDIA_QUERIES_THRESHOLDS = {
     mobile: 600,
 }

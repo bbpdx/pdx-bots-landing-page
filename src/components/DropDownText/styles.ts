@@ -1,15 +1,12 @@
-import { colors } from '@/constants'
-
 
 export const styles = {
   title: {
     fontFamily: 'Bungee Hairline',
     fontWeight:'bold',
-    color: colors.secondary
+    color: '#02FFFF'
   },
   details: {
     fontFamily: 'monospace',
     opacity: 0.6,
-    color: colors.text
-  }
-}
+    color: '#16FF00'
+}}

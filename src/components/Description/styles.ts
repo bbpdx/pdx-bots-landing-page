@@ -1,4 +1,4 @@
-import { colors, MEDIA_QUERIES_THRESHOLDS } from '@/constants';
+import { MEDIA_QUERIES_THRESHOLDS } from '@/constants';
 
 const styles = {
   descriptionBox: {
@@ -10,7 +10,7 @@ const styles = {
     margin: '2rem',
     marginLeft: (width && width > MEDIA_QUERIES_THRESHOLDS.mobile) ? '55vw': '2rem',
     marginTop:'10vh',
-    color: colors.text
+    color:'#16FF00',
   })
 };
 
