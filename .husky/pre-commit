@@ -4,4 +4,4 @@
 npm run check-branch-name
 
 npm run test:unit
-# npx lint-staged
+npx lint-staged

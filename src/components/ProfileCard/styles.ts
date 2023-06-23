@@ -1,11 +1,9 @@
-
-export const styles = {
-  profileCardOuterBox : {
+export default {
+  profileCardOuterBox: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   profileCardInnerBox: {
     width: '10rem',
@@ -14,18 +12,17 @@ export const styles = {
   },
   memberName: {
     color: '#02FFFF',
-    opacity:'0.7',
+    opacity: '0.7',
     fontFamily: 'Bungee Hairline',
-    inlineSize: 'min-content'
+    inlineSize: 'min-content',
   },
   memberPosition: {
-    color:'#02FFFF',
-    opacity:'0.5'
+    color: '#02FFFF',
+    opacity: '0.5',
   },
   memberSummary: {
     color: '#16FF00',
-    opacity:'0.6',
-    fontFamily:  'monospace'
-
-  }
-}
+    opacity: '0.6',
+    fontFamily: 'monospace',
+  },
+};

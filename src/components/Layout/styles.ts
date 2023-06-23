@@ -1,12 +1,11 @@
-
-export const styles = {
+export default {
   header: {
     display: 'flex',
     flexDirection: 'row',
     color: 'white',
-    backgroundColor:'#545454',
+    backgroundColor: '#545454',
     opacity: '.8',
-    fontFamily:  'Bungee Hairline',
+    fontFamily: 'Bungee Hairline',
   },
 
   headerNavBox: {
@@ -16,12 +15,12 @@ export const styles = {
     alignItems: 'center',
     color: '#16FF00',
     opacity: '1',
-    paddingRight: '2rem'
+    paddingRight: '2rem',
   },
 
   navigationButton: {
-      color:'#16FF00',
-      fontFamily:'Bungee Hairline',
-      fontWeight: 400
-  }
-}
+    color: '#16FF00',
+    fontFamily: 'Bungee Hairline',
+    fontWeight: 400,
+  },
+};
