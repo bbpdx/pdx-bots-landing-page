@@ -1,37 +1,11 @@
-import {Grid}  from '@mui/material';
-import MemberProfile from '@/components/MemberProfile';
 import Header from '@/components/Header';
-import { memberProfiles } from '@/constants';
+import AboutUs from '@/views/AboutUs';
 
-const About = () => {
-  return (
-    <>
-      <Header page="/about" />
-      <main >
-        <Grid 
-        container
-        gap={4}
-        sx={{
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          padding: '2rem',
-        }}>
-          { memberProfiles.map((member) => ( 
-            <Grid 
-            item
-            key={member.name}
-            xs={11}
-            sm={6}
-            md={4}
-            >
-              <MemberProfile member={member}/>
-            </Grid>
-          )
-          )}
-        </Grid>
-      </main>
-    </>
-  )
-};
+const About = () => (
+  <>
+    <Header page="/about" />
+    <AboutUs />
+  </>
+);
 
 export default About;

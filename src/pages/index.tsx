@@ -1,9 +1,12 @@
-import Header from '@/components/Header';
-import Main from '@/components/Main';
+import Head from 'next/head';
+import Main from '@/views/Main';
 
 const Home = () => (
   <>
-    <Header page="/" />
+    <Head>
+      <title>PDX Bots</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </Head>
     <Main />
   </>
 );

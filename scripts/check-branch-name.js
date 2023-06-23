@@ -11,7 +11,6 @@ if (!re.test(branch)) {
     message += "Valid branch names are formatted like: DOC-1/doing-something\n";
     message += "You can rename your branch with: git branch -m 'DOC-xxxx/new-name'\n";
     console.error(message);
-    // throw new Error(message);
 }
 
 return;

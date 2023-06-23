@@ -1,0 +1,8 @@
+/coverage
+/dist
+/examples
+/node_modules
+/scripts/
+.eslintrc.js
+next.config.js
+commitlint.config.js
